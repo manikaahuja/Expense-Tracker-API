@@ -10,4 +10,5 @@ public interface UserDetailsService {
     public List<UserDetails> getAllUserDetails();
     public String deleteUserDetails(Long userId);
     public void updateUserDetails(UserDetails userDetails);
+    public void updateLastSentDate(Long userId);
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -37,5 +38,14 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public void updateUserDetails(UserDetails userDetails) {
         userDetails.setCreatedDate(Timestamp.from(Instant.now()));
         userDetailsDao.save(userDetails);
+    }
+
+    @Override
+    public void updateLastSentDate(Long userId) {
+        Optional<UserDetails> user = userDetailsDao.findById(userId);
+        if(user.isPresent()) {
+            user.get().setLastSentMail(Timestamp.from(Instant.now()));
+            userDetailsDao.save(user.get());
+        }
     }
 }
