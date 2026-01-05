@@ -6,6 +6,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 public interface ExpenseTrackerService {
-    public List<ExpenseTracker> getAllExpensesFromUserIdAndDate(Long userId, LocalDate fromDate, LocalDate toDate);
-    public void saveExpense(ExpenseTracker expenseTracker);
+    List<ExpenseTracker> getAllExpensesFromUserIdAndDate(Long userId, LocalDate fromDate, LocalDate toDate);
+    void saveExpense(ExpenseTracker expenseTracker);
 }
