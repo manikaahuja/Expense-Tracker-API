@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface UserDetailsService {
 
-    public void saveUserDetails(UserDetails userDetails);
-    public List<UserDetails> getAllUserDetails();
-    public String deleteUserDetails(Long userId);
-    public void updateUserDetails(UserDetails userDetails);
-    public void updateLastSentDate(Long userId);
+    void saveUserDetails(UserDetails userDetails);
+    List<UserDetails> getAllUserDetails();
+    String deleteUserDetails(Long userId);
+    void updateUserDetails(UserDetails userDetails);
+    void updateLastSentDate(Long userId);
 }
