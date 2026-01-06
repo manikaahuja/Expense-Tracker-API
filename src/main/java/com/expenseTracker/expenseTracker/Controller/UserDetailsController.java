@@ -16,11 +16,6 @@ public class UserDetailsController {
         this.userDetailsService = userDetailsService;
     }
 
-    @GetMapping("/test")
-    public String test() {
-        return "App is working";
-    }
-
     @PostMapping("/user")
     public void createUser(@RequestBody UserDetails userDetails) {
          userDetailsService.saveUserDetails(userDetails);
