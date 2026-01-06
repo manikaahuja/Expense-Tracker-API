@@ -31,7 +31,7 @@ public class WeeklyMailScheduler {
         this.emailService = emailService;
     }
 
-    @Scheduled(cron = "0 * * * * *")
+    // @Scheduled(cron = "0 * * * * *")
     public void sendWeeklyExpenseEmail() {
         log.info("Weekly scheduler started");
         List<UserDetails> users = userDetailsService.getAllUserDetails();

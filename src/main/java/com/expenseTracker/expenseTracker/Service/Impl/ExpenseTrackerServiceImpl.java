@@ -2,6 +2,7 @@ package com.expenseTracker.expenseTracker.Service.Impl;
 
 import com.expenseTracker.expenseTracker.Dao.ExpenseTrackerDao;
 import com.expenseTracker.expenseTracker.Dao.UserDetailsDao;
+import com.expenseTracker.expenseTracker.Entity.Enums.ExpenseCategory;
 import com.expenseTracker.expenseTracker.Entity.ExpenseTracker;
 import com.expenseTracker.expenseTracker.Service.ExpenseTrackerService;
 import org.springframework.stereotype.Service;
@@ -53,4 +54,18 @@ public class ExpenseTrackerServiceImpl implements ExpenseTrackerService {
         expenseTrackerDao.save(expenseTracker);
     }
 
+    @Override
+    public List<ExpenseTracker> getAllExpensesFromUserId(Long userId) {
+        return expenseTrackerDao.findByUserId(userId);
+    }
+
+    @Override
+    public List<ExpenseTracker> getAllExpensesFromUserIdAndExpenseCategory(Long userId, ExpenseCategory expenseCategory) {
+        return expenseTrackerDao.findByUserIdAndExpenseCategory(userId, expenseCategory);
+    }
+
+    @Override
+    public Long getExpenseAmountByUserIdAndCategory(Long userId, ExpenseCategory expenseCategory) {
+        return expenseTrackerDao.findExpenseAmountByUserIdAndExpenseCategory(userId, expenseCategory);
+    }
 }

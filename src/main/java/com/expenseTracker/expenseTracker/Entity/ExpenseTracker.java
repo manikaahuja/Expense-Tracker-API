@@ -12,6 +12,7 @@ import java.sql.Timestamp;
 public class ExpenseTracker {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long Id;
 
