@@ -31,8 +31,8 @@ public class UserDetailsController {
         return userDetailsService.deleteUserDetails(userId);
     }
 
-    @PutMapping("/updateUser")
-    public void updateUser(@RequestBody UserDetails userDetails) {
-        userDetailsService.updateUserDetails(userDetails);
+    @PutMapping("/{userId}/updateUser")
+    public String updateUser(@PathVariable Long userId, @RequestBody UserDetails userDetails) {
+        return userDetailsService.updateUserDetails(userId, userDetails);
     }
 }

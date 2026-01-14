@@ -9,6 +9,6 @@ public interface UserDetailsService {
     void saveUserDetails(UserDetails userDetails);
     List<UserDetails> getAllUserDetails();
     String deleteUserDetails(Long userId);
-    void updateUserDetails(UserDetails userDetails);
+    String updateUserDetails(Long userId, UserDetails userDetails);
     void updateLastSentDate(Long userId);
 }
