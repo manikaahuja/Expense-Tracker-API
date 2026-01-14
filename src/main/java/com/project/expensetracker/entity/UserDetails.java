@@ -1,4 +1,4 @@
-package com.expenseTracker.expenseTracker.Entity;
+package com.project.expensetracker.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;

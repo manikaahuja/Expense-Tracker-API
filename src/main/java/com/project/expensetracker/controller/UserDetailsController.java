@@ -1,7 +1,7 @@
-package com.expenseTracker.expenseTracker.Controller;
+package com.project.expensetracker.controller;
 
-import com.expenseTracker.expenseTracker.Entity.UserDetails;
-import com.expenseTracker.expenseTracker.Service.UserDetailsService;
+import com.project.expensetracker.entity.UserDetails;
+import com.project.expensetracker.service.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

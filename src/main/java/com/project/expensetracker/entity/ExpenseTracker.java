@@ -1,6 +1,6 @@
-package com.expenseTracker.expenseTracker.Entity;
+package com.project.expensetracker.entity;
 
-import com.expenseTracker.expenseTracker.Entity.Enums.ExpenseCategory;
+import com.project.expensetracker.entity.enums.ExpenseCategory;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -14,7 +14,7 @@ public class ExpenseTracker {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long Id;
+    private Long id;
 
     @Column(name="user_id")
     private Long userId;

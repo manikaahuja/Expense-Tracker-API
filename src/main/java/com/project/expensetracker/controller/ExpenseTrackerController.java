@@ -1,8 +1,8 @@
-package com.expenseTracker.expenseTracker.Controller;
+package com.project.expensetracker.controller;
 
-import com.expenseTracker.expenseTracker.Entity.Enums.ExpenseCategory;
-import com.expenseTracker.expenseTracker.Entity.ExpenseTracker;
-import com.expenseTracker.expenseTracker.Service.ExpenseTrackerService;
+import com.project.expensetracker.entity.enums.ExpenseCategory;
+import com.project.expensetracker.entity.ExpenseTracker;
+import com.project.expensetracker.service.ExpenseTrackerService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,5 +34,10 @@ public class ExpenseTrackerController {
     @GetMapping("/{userId}/{category}/expense/amount")
     public Long getExpenseAmountByUserIdAndCategory(@PathVariable Long userId, @PathVariable ExpenseCategory category) {
         return expenseTrackerService.getExpenseAmountByUserIdAndCategory(userId, category);
+    }
+
+    @DeleteMapping("/{id}/delete")
+    public String deleteExpense(@PathVariable Long id) {
+        return expenseTrackerService.deleteExpenseDetails(id);
     }
 }

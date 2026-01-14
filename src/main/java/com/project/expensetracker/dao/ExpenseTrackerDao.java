@@ -1,7 +1,7 @@
-package com.expenseTracker.expenseTracker.Dao;
+package com.project.expensetracker.dao;
 
-import com.expenseTracker.expenseTracker.Entity.Enums.ExpenseCategory;
-import com.expenseTracker.expenseTracker.Entity.ExpenseTracker;
+import com.project.expensetracker.entity.enums.ExpenseCategory;
+import com.project.expensetracker.entity.ExpenseTracker;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
