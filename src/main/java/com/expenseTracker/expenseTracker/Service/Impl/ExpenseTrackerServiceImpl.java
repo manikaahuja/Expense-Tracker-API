@@ -17,37 +17,27 @@ import java.util.Optional;
 public class ExpenseTrackerServiceImpl implements ExpenseTrackerService {
 
     private final ExpenseTrackerDao expenseTrackerDao;
-    private final UserDetailsDao userDetailsDao;
 
-    public ExpenseTrackerServiceImpl(ExpenseTrackerDao expenseTrackerDao, UserDetailsDao userDetailsDao) {
+    public ExpenseTrackerServiceImpl(ExpenseTrackerDao expenseTrackerDao) {
         this.expenseTrackerDao = expenseTrackerDao;
-        this.userDetailsDao = userDetailsDao;
     }
 
     @Override
-    public List<ExpenseTracker> getAllExpensesFromUserIdAndDate(Long userId, LocalDate fromDate, LocalDate toDate) {
-        Optional<ExpenseTracker> expenseTrackerList = expenseTrackerDao.findById(userId);
-        Timestamp timestamp = userDetailsDao.findById(userId).get().getLastSentMail();
-        LocalDate today = LocalDate.now();
-        LocalDate lastSentDate = timestamp
-                .toInstant()
-                .atZone(ZoneId.systemDefault())
-                .toLocalDate();
-        if(expenseTrackerList.isPresent()) {
-            List<ExpenseTracker> filteredExpenses = expenseTrackerList.stream().filter(expense -> {
-                        LocalDate createdDate = expense.getCreatedDate()
-                                .toInstant()
-                                .atZone(ZoneId.systemDefault())
-                                .toLocalDate();
+    public List<ExpenseTracker> getAllExpensesFromUserIdAndDate(
+            Long userId,
+            LocalDate fromDate,
+            LocalDate toDate) {
 
-                        return (createdDate.isAfter(lastSentDate)
-                                && !createdDate.isAfter(today));
-                    })
-                    .toList();
-            return filteredExpenses;
-        }
-        return List.of();
+        Timestamp fromTs = Timestamp.valueOf(fromDate.atStartOfDay());
+        Timestamp toTs = Timestamp.valueOf(toDate.plusDays(1).atStartOfDay());
+
+        return expenseTrackerDao.findByUserIdAndCreatedDateBetween(
+                userId,
+                fromTs,
+                toTs
+        );
     }
+
 
     @Override
     public void saveExpense(ExpenseTracker expenseTracker) {
