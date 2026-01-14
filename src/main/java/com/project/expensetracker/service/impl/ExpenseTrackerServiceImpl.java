@@ -1,17 +1,14 @@
-package com.expenseTracker.expenseTracker.Service.Impl;
+package com.project.expensetracker.service.impl;
 
-import com.expenseTracker.expenseTracker.Dao.ExpenseTrackerDao;
-import com.expenseTracker.expenseTracker.Dao.UserDetailsDao;
-import com.expenseTracker.expenseTracker.Entity.Enums.ExpenseCategory;
-import com.expenseTracker.expenseTracker.Entity.ExpenseTracker;
-import com.expenseTracker.expenseTracker.Service.ExpenseTrackerService;
+import com.project.expensetracker.dao.ExpenseTrackerDao;
+import com.project.expensetracker.entity.enums.ExpenseCategory;
+import com.project.expensetracker.entity.ExpenseTracker;
+import com.project.expensetracker.service.ExpenseTrackerService;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ExpenseTrackerServiceImpl implements ExpenseTrackerService {
@@ -57,5 +54,11 @@ public class ExpenseTrackerServiceImpl implements ExpenseTrackerService {
     @Override
     public Long getExpenseAmountByUserIdAndCategory(Long userId, ExpenseCategory expenseCategory) {
         return expenseTrackerDao.findExpenseAmountByUserIdAndExpenseCategory(userId, expenseCategory);
+    }
+
+    @Override
+    public String deleteExpenseDetails(Long id) {
+        expenseTrackerDao.deleteById(id);
+        return "Expense with id : " + id + " was deleted successfully";
     }
 }

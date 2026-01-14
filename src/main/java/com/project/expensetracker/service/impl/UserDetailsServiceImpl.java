@@ -1,8 +1,8 @@
-package com.expenseTracker.expenseTracker.Service.Impl;
+package com.project.expensetracker.service.impl;
 
-import com.expenseTracker.expenseTracker.Dao.UserDetailsDao;
-import com.expenseTracker.expenseTracker.Entity.UserDetails;
-import com.expenseTracker.expenseTracker.Service.UserDetailsService;
+import com.project.expensetracker.dao.UserDetailsDao;
+import com.project.expensetracker.entity.UserDetails;
+import com.project.expensetracker.service.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;

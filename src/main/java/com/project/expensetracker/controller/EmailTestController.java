@@ -1,6 +1,6 @@
-package com.expenseTracker.expenseTracker.Controller;
+package com.project.expensetracker.controller;
 
-import com.expenseTracker.expenseTracker.Service.EmailService;
+import com.project.expensetracker.service.EmailService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

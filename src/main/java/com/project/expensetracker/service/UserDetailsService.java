@@ -1,6 +1,6 @@
-package com.expenseTracker.expenseTracker.Service;
+package com.project.expensetracker.service;
 
-import com.expenseTracker.expenseTracker.Entity.UserDetails;
+import com.project.expensetracker.entity.UserDetails;
 
 import java.util.List;
 

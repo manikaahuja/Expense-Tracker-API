@@ -1,4 +1,4 @@
-package com.expenseTracker.expenseTracker.Entity.Enums;
+package com.project.expensetracker.entity.enums;
 
 import lombok.Getter;
 

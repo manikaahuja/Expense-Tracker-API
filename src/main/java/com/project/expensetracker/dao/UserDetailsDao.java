@@ -1,6 +1,6 @@
-package com.expenseTracker.expenseTracker.Dao;
+package com.project.expensetracker.dao;
 
-import com.expenseTracker.expenseTracker.Entity.UserDetails;
+import com.project.expensetracker.entity.UserDetails;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

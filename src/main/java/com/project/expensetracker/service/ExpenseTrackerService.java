@@ -1,7 +1,7 @@
-package com.expenseTracker.expenseTracker.Service;
+package com.project.expensetracker.service;
 
-import com.expenseTracker.expenseTracker.Entity.Enums.ExpenseCategory;
-import com.expenseTracker.expenseTracker.Entity.ExpenseTracker;
+import com.project.expensetracker.entity.enums.ExpenseCategory;
+import com.project.expensetracker.entity.ExpenseTracker;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -12,4 +12,5 @@ public interface ExpenseTrackerService {
     List<ExpenseTracker> getAllExpensesFromUserId(Long userId);
     List<ExpenseTracker> getAllExpensesFromUserIdAndExpenseCategory(Long userId, ExpenseCategory expenseCategory);
     Long getExpenseAmountByUserIdAndCategory(Long userId, ExpenseCategory expenseCategory);
+    String deleteExpenseDetails(Long id);
 }

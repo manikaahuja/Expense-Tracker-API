@@ -1,11 +1,11 @@
-package com.expenseTracker.expenseTracker.Scheduler;
+package com.project.expensetracker.scheduler;
 
-import com.expenseTracker.expenseTracker.Entity.Enums.ExpenseCategory;
-import com.expenseTracker.expenseTracker.Entity.ExpenseTracker;
-import com.expenseTracker.expenseTracker.Entity.UserDetails;
-import com.expenseTracker.expenseTracker.Service.EmailService;
-import com.expenseTracker.expenseTracker.Service.ExpenseTrackerService;
-import com.expenseTracker.expenseTracker.Service.UserDetailsService;
+import com.project.expensetracker.entity.enums.ExpenseCategory;
+import com.project.expensetracker.entity.ExpenseTracker;
+import com.project.expensetracker.entity.UserDetails;
+import com.project.expensetracker.service.EmailService;
+import com.project.expensetracker.service.ExpenseTrackerService;
+import com.project.expensetracker.service.UserDetailsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
